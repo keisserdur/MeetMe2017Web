@@ -1,0 +1,29 @@
+<h1>Informacion de un contacto</h1>
+
+<table border=1>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nick</th>
+        <th>TLF</th>
+        <th>Token</th>
+        <th>Email</th>
+        <th>photo</th>
+        <th>status</th>
+        <th>lastconexion</th>
+        <th>privacity</th>
+    <tr>
+        <td><%= @user.id %></td>
+        <td><%= @user.name %></td>
+        <td><%= @user.nick %></td>
+        <td><%= @user.tlf %></td>
+        <td><%= @user.token %></td>
+        <td> <%= @user.email %></td>
+        <td> <%= @user.photo %></td>
+        <td> <%= @user.status %></td>
+        <td> <%= @user.lastconexion %></td>
+        <td> <%= @user.privacity %></td>
+    </tr>
+</table>
+<br>
+<%= link_to "Back", controller: "user", action: "get_list_contact" %>

@@ -1,0 +1,33 @@
+$ rails generate controller index home
+$ rails generate controller session login logout register forgotten
+$ rails generate controller user get_user_info get_list_contact get_conversation sync_contacts new_contact edit_contact remove_contact
+$ rails generate controller group get_group_info get_list_contact get_conversation new_group edit_group remove_group add_user remove_user
+
+$ rails generate model User token name nick tlf:integer email photo status lastconexion privacity
+$ rails generate model Contact tokenuser tokencontact lastsync
+$ rails generate model Message tokenuser type content tokenuser tokencontact day time
+$ rails generate model Group topic tokenlist photo description tokenadmin
+$ rails generate model GroupList topic tokenuser
+
+$ sudo apt-get install libsqlite3-dev
+
+CREAR DB
+
+$ rm -f db/*.sqlite3
+$ rake db:create
+$ RAILS_ENV=development rake db:migrate
+$ rails s -e development
+
+$ rails console
+$ Group.all         Crea un sentencia sql que devuelve todos los grupos
+$ Gorup.find(1)     Crea una sentencia que devuelve el grupo con id 1
+
+INTALANDO FIREBASE HOSTING (No funciona)
+
+$ npm install -g firebase-tools     Instalar herramientas de Firebase
+$ firebase login                    Inicia sesión en Google
+$ firebase init                     Inicia tu proyecto
+$ firebase deploy                   Implementa tu sitio web
+
+INTALANDO LIBRERIA DE JSON
+$ gem install json

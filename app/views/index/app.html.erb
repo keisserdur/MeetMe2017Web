@@ -1,0 +1,87 @@
+<article id="menu-modal"></article>
+<article id="myinfo">
+    <p id="myid"><%= @user['id'] %></p>
+    <p id="myname"><%= @user['name'] %></p>
+    <p id="mynick"><%= @user['nick'] %></p>
+    <p id="mytlf"><%= @user['tlf'] %></p>
+    <p id="mytoken"><%= @user['token'] %></p>
+    <p id="myemail"><%= @user['email'] %></p>
+    <p id="myphoto"><%= @user['photo'] %></p>
+    <p id="mystatus"><%= @user['status'] %></p>
+    <p id="mylastconexion"><%= @user['lastconexion'] %></p>
+    <p id="myprivacity"><%= @user['privacity'] %></p>
+</article>
+
+<menu>
+    <div class="search-menu">
+        <a href="">
+           <i class="material-icons">&#xE5D2;</i>
+        </a>
+        <input type="text" class="search-input" placeholder="Buscar">
+    </div>
+    <div class="info-chat">
+        <div class="current-chat-info">
+            <img id="talk-img" alt="" class="img-responsive" src="">
+            <p id="talk-to"></p>
+        </div>
+        <div>
+            <i class="material-icons">&#xE8B6;</i>
+            <i class="material-icons">&#xE5D4;</i>
+        </div>
+    </div>
+</menu>
+
+<section id="app">
+    <aside>
+        <ul>
+            <% @listUser.each do |user|%>
+               <li>
+                    <img class="img-responsive" src="<%= image_url('profile/'+user.photo.to_s) %>">
+                    <div>
+                        <p class="name"><%= user.name %></p>
+                        <p class="last-menssage">Este es el ultimo mensaje</p>
+                        <token><%= user.token %></token>
+                        <span>21:30</span>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    </aside>
+    
+    <section id="conversation-messages">
+    </section>
+</section>
+
+<footer id="app-footer">
+    <div class="add-contact">
+        <%= link_to raw('<i class="material-icons">&#xE148;</i>'), @no_url %>
+    </div>
+    <div class="send-control">
+        <%= form_for (@sendMessage),html: {id: 'form-send'}, url:{controller: 'user', action:'sendMessage'}, remote: true do |f| %>
+            <%= f.text_field :menssage, id: 'text2Send', placeholder: "Escribe aqui tu mensaje", disabled: true %>
+            <%= f.hidden_field :typeMessage, value: 'texto' %>
+            <%= f.hidden_field :tokencontact, id: 'othertoken', value: '' %>
+        <% end %>
+        <div>
+            <i class="material-icons">&#xE226;</i>
+            <i class="material-icons">&#xE8B4;</i>
+            <i class="material-icons">&#xE251;</i>
+            <i class="material-icons">&#xE029;</i>
+        </div>
+    </div>
+</footer>
+
+
+<div class="old-component">
+<hr>
+<h1>App web</h1>
+<p>Aqui es donde se supone que mandas los mensajes</p>
+<%= link_to "Ver contactos", controller: "user", action: "get_list_contact" %>
+<br>
+<%= link_to "Logout", controller: "session", action: "logout" %>
+<br>
+
+<% if(@name) %>
+    <h1>Hola <%= @name %></h1>       
+<% end %>
+</div>

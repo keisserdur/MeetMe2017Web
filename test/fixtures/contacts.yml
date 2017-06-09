@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tokenuser: MyString
+  tokencontact: MyString
+  lastsync: MyString
+
+two:
+  tokenuser: MyString
+  tokencontact: MyString
+  lastsync: MyString

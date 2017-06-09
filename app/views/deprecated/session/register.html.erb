@@ -1,0 +1,22 @@
+<h1>Formulario para registrarte</h1>
+<!--<input typ="text" placeholder="Nombre / Nick"></input>-->
+
+
+<%= form_for (@usuario) do |f| %>
+    <%= f.text_field :name, placeholder: "name", class: "name" %><br>
+    <%= f.text_field :nick, placeholder: "nick" %><br>
+    <%= f.email_field :email, placeholder: "email" %><br>
+    <%= f.telephone_field :tlf, placeholder: "tlf" %><br>
+    <%= f.submit "Registrate" %>
+<%end%>
+
+<br>
+
+<%= form_for ('loginUser'), url:{controller: 'session', action:'login'} do |f| %> <!--method: 'get'-->
+    <%= f.text_field :name, placeholder: "name", class: "name" %><br>
+    <%= f.telephone_field :tlf, placeholder: "tlf" %><br>
+    <%= f.submit "Login" %>
+<%end%>
+
+<br>
+<%= link_to "Home", controller: "index", action: "home" %>

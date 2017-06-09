@@ -1,0 +1,179 @@
+<article id="login-modal">
+    <i class="material-icons">&#xE5CD;</i>
+    <%= form_for ('loginUser'), url:{controller: 'session', action:'login'} do |f| %> <!--method: 'get'-->
+        <%= f.text_field :name, placeholder: "name", class: "name" %><br>
+        <%= f.telephone_field :tlf, placeholder: "tlf" %><br>
+        <%= f.submit "Login" %>
+    <%end%>
+</article>
+
+<article id="register-modal">
+    <i class="material-icons">&#xE5CD;</i>
+    <%= form_for (@newUsuario), url:{controller: 'session', action:'register'} do |f| %>
+        <%= f.text_field :name, placeholder: "name", class: "name" %><br>
+        <%= f.text_field :nick, placeholder: "nick" %><br>
+        <%= f.email_field :email, placeholder: "email" %><br>
+        <%= f.telephone_field :tlf, placeholder: "tlf" %><br>
+        <%= f.submit "Registrate" %>
+    <%end%>
+</article>
+
+<header> <!--class=scrollable-->
+    <nav id="home">
+        <ul>
+            <li><img src="<%= asset_path 'Logo.png' %>" alt="logo"></li>
+            <li><%= link_to 'MeetMe',  @url_home, class: 'bttn-home'  %></li>
+            <li><%= link_to @link_login_app, @url_login_app, class: 'bttn bttn-login trigger-login' %></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="first-splash">
+    <div class="content left">
+        <div class="content-row-2">
+            <h1>Habla sin limites estés donde estés</h1>
+            <%= link_to 'Prueba Gratis MeetMe', @no_url, class: 'bttn bttn-white bttn-margin trigger-register' %>
+        </div>
+    </div>
+</section>
+
+<section id="description-app">
+    <div class="content dp1">
+        <div class="content-vertical content-row-2">
+            <img src="<%= asset_path 'app_interface.png' %>" alt="Imagen de un portatil con la app web">
+        </div>
+        <div class="content-vertical content-row-2">
+            <h2 class="content-horizontal">Expresas tus ideas</h2>
+            <p class="content-horizontal">Habla con quien quieras y desde donde quieras, no te cortes ni un pelo cuando se trate de hablar, con MeetMe, nunca a sido más fácil y cómodo. Nunca se perdaran los mensajes más importantes si usas la funcion integrada de notas.</p>
+            <div class="bttn-content content-horizontal">
+                <%= link_to 'Prueba la version Web', @no_url, class: 'bttn bttn-margin trigger-register' %>
+            </div>
+        </div>
+    </div>
+    <div class="content dp2">
+        <div class="content-vertical content-row-2">
+            <h2 class="content-horizontal">Expresas tus ideas</h2>
+            <p class="content-horizontal">Habla con quien quieras y desde donde quieras, no te cortes ni un pelo cuando se trate de hablar, con MeetMe, nunca a sido más fácil y cómodo. Nunca se perdaran los mensajes más importantes si usas la funcion integrada de notas.</p>
+            <div class="bttn-content content-horizontal">
+                <%= link_to 'Prueba la version Movil', @no_url, class: 'bttn bttn-margin' %>
+            </div>
+        </div>
+        <div class="content-vertical content-row-2">
+            <img src="<%= asset_path 'app_interface.png' %>" alt="Imagen de un portatil con el menu de la app web y un movil con la app movil">
+        </div>
+    </div>
+</section>
+
+<section id="stats-number">
+    <div class="num-anim content center">
+        <div class="content-vertical content-horizontal content-row-3">
+            14.000 Usuarios
+        </div>
+        <div class="content-vertical content-horizontal content-row-3">
+            140.000 Mensajes enviados
+        </div>
+        <div class=" content-vertical content-horizontal content-row-3">
+            14.000 Notas creadas
+        </div>
+    </div>
+</section>
+
+<section id="menssages-anim">
+    <div class="content">
+        <div class="menssages-content-anim content-row-2">
+            <span class="menssage-body menssage-anim otherself ms1">
+                <p class="menssage-author">Susan</p>
+                <p class="menssage-content">¿ A qué no sabes que me ha pasado ?</p>
+                <span class="menssage-time">21:33</span>
+            </span>
+            <span class="menssage-body menssage-anim myself ms2">
+                <p class="menssage-author">JB</p>
+                <p class="menssage-content">No cuentame ...</p>
+                <span class="menssage-time">21:33</span>
+            </span>
+            <span class="menssage-body menssage-anim otherself ms1">
+                <p class="menssage-author">Susan</p>
+                <p class="menssage-content">Pues que iba andando por la calle cuando vi algo asombroso</p>
+                <span class="menssage-time">21:34</span>
+            </span>
+            <span class="menssage-body menssage-anim otherself ms1">
+                <p class="menssage-author">Susan</p>
+                <p class="menssage-content">Vi a un famoso en un restaurante</p>
+                <span class="menssage-time">21:34</span>
+            </span>
+            <span class="ocult-anim menssage-body menssage-anim myself ms2">
+                <p class="menssage-author">JB</p>
+                <p class="menssage-content">En serio, y quien era ?</p>
+                <span class="menssage-time">21:35</span>
+            </span>
+        </div>
+        <div class="menssage-description-anim content-row-2 content-vertical">
+            <h2 class="content-horizontal">Los mensajes al instante</h2>
+            <p class="content-horizontal">Puedes mandar tantos mensajes como quieras, y simpre tendras la seguridad de que tus mensajes llegaran a su destinatario casi al intante, y a todas sus plataformas simultaneamente. Por que esperar más, desde hoy podras escribirte con tus allegados sin costo alguno.</p>
+            <div class="bttn-content content-horizontal">
+                <%= link_to 'Prueba Gratis MeetMe', @no_url, class: 'bttn bttn-margin trigger-register' %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team-dev">
+    <h2>Nuestro equipo</h2>
+    <img src="<%= asset_path 'app_interface.png' %>" alt="Fondo de un portatil">
+    <div class="team-content-anim">
+        <span class="menssage-body menssage-anim otherself ms1">
+            <p class="menssage-author">Susan</p>
+            <p class="menssage-content">¿ A qué no sabes que me ha pasado ?</p>
+            <span class="menssage-time">21:33</span>
+        </span>
+        <span class="menssage-body menssage-anim myself ms2">
+            <p class="menssage-author">JB</p>
+            <p class="menssage-content">No cuentame ...</p>
+            <span class="menssage-time">21:33</span>
+        </span>
+        <span class="menssage-body menssage-anim otherself ms1">
+            <p class="menssage-author">Susan</p>
+            <p class="menssage-content">Pues que iba andando por la calle cuando vi algo asombroso</p>
+            <span class="menssage-time">21:34</span>
+        </span>
+        <span class="menssage-body menssage-anim otherself ms1">
+            <p class="menssage-author">Susan</p>
+            <p class="menssage-content">Vi a un famoso en un restaurante</p>
+            <span class="menssage-time">21:34</span>
+        </span>
+        <span class="ocult-anim menssage-body menssage-anim myself ms2">
+            <p class="menssage-author">JB</p>
+            <p class="menssage-content">En serio, y quien era ?</p>
+            <span class="menssage-time">21:35</span>
+        </span>
+    </div>
+</section>
+
+<section id="keep-conect">
+    <div class="content">
+        <div class="content-row-2">
+            <h2>Nunca olvidaras nada</h2>
+            <p>MeetMe esta integrado con keep, de esta manera podras almacenar los mensajes como si de notas se trataran. Despreocupate de perder ese mensaje tan importante.</p>
+            <div class="bttn-content content-horizontal">
+                <%= link_to 'Prueba Gratis Jaja Moqui', @no_url, class: 'bttn bttn-white bttn-margin' %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer></footer>
+
+
+
+<h1>LandingPage</h1>
+<p>Todo el contenido de la pag web</p>
+
+<h1><strong><%= @error %></strong></h1>
+
+<%= link_to "Login/Register", controller: "session", action: "register" %>
+<br>
+<%= link_to "Logout", controller: "session", action: "logout" %>
+<br>
+<%= link_to "App", controller: "index", action: "app" %>
+<br>
+<%= link_to "Ver contactos", controller: "user", action: "get_list_contact" %>
